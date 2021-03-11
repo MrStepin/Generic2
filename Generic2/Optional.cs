@@ -10,7 +10,19 @@ namespace Generic2
     public class Optional <T>
     {
         private T _value;
-        public bool HasValue { get; set; }
+
+        public bool HasValue
+        {
+            get
+            {
+                if (Value == null)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+        }
         public T Value
         {
             get

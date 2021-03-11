@@ -14,8 +14,10 @@ namespace Tests
             Optional<int> optional = new Optional<int>
             {
                 Value = 5
+                
             };
             Assert.IsNotNull(optional.Value);
+            Assert.IsTrue(optional.HasValue);
         }
         [Test]
         public void CheckIntIsNull()
@@ -25,7 +27,9 @@ namespace Tests
             {
                 Value = null
             };
+            Assert.IsFalse(optional.HasValue);
             Assert.IsNotNull(optional.Value);
+           
         }
     }
 }
