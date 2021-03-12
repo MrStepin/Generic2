@@ -10,32 +10,26 @@ namespace Generic2
     public class Optional <T>
     {
         private T _value;
-
+        private bool _hasValue = false;
         public bool HasValue
         {
             get
             {
-                if (Value == null)
-                {
-                    return false;
-                }
-
-                return true;
+                return _hasValue;
             }
         }
         public T Value
         {
             get
             {
-                if (_value == null)
-                {
+                if (!HasValue)
                     throw new InvalidOperationException();
-                }
                 return _value;
             }
             set
             {
                 _value = value;
+                _hasValue = true;
             }
         }
 

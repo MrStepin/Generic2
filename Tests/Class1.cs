@@ -27,9 +27,16 @@ namespace Tests
             {
                 Value = null
             };
-            Assert.IsFalse(optional.HasValue);
-            Assert.IsNotNull(optional.Value);
+            Assert.IsTrue(optional.HasValue);
+            Assert.IsNull(optional.Value);
            
+        }
+        [Test]
+        public void CheckIntHasNoValue()
+        {
+            Optional<int> optional = new Optional<int>();
+
+            Assert.IsFalse(optional.HasValue);
         }
     }
 }
